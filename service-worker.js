@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/javier32rojas040506.github.io/TodoList/precache-manifest.53cd2901ba98068d6ca410422eeed2fc.js"
+  "/javier32rojas040506.github.io/todo-tool/precache-manifest.6e1668f0c1ec33f446aae8d51bb06c1d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/javier32rojas040506.github.io/TodoList/index.html", {
+workbox.routing.registerNavigationRoute("/javier32rojas040506.github.io/todo-tool/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
