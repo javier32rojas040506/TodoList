@@ -1,0 +1,15 @@
+:root {
+  --main-bg-color: brown;
+  --title-size: 2rem;
+  --sub-title-size: 1.4rem;
+  --task-text-size: 1.3rem;
+  --font: 'Poppins', sans-serif;
+  --blackblue-color: #0E0B16;
+  --purple-color: #A239CA;
+  --blue-color: #4717F6;
+  --gray-premium-color: #E7DFDD;
+}
+
+body{
+  background-color: var(--blackblue-color);
+}

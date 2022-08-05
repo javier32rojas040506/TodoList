@@ -1,0 +1,46 @@
+.TodoItem{
+    margin: 4px 5px;
+    border-radius: 2px;
+    background-color: var(--blue-color);
+    color: whitesmoke;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    place-items: center;
+    column-gap: 5px;
+    font-family: var(--font);
+    font-size: var(--task-text-size);
+    box-shadow: 0px 0px 10px var(--purple-color);
+}
+
+.TodoItem:nth-child(2){
+    text-shadow: 0 0 2px var(--gray-premium-color);
+}
+.TodoItem :nth-child(3):hover{
+    content: url(https://cdn.discordapp.com/attachments/831560691252068372/1002767703490187395/x-mark-24.png);
+}
+.TodoItemDone{
+    text-decoration: line-through;
+    box-shadow: 0px 5px 50px var(--blue-color);
+}
+
+@media (max-width: 780px) {
+    .TodoItem{
+        font-size: calc(var(--task-text-size) - 0.1rem);
+    }
+    .TodoItem :nth-child(1){
+        width: 50px;
+    }
+}
+
+@media (max-width: 530px) {
+    .TodoItem{
+        font-size: calc(var(--task-text-size) - 0.2rem);
+    }
+    .TodoItem :nth-child(1){
+        width: 30px;
+    }
+    .TodoItem :nth-child(3){
+        width: 15px;
+    }
+}

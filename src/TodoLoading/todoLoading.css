@@ -1,0 +1,24 @@
+
+
+@media (max-width: 780px) {
+
+    svg {
+        width: 540px;
+        height: 80px;
+    }
+    rect{
+        width: 200%;
+        height: 150%;
+    }
+}
+
+@media (max-width: 530px) {
+    svg {
+        width: 320px;
+        height: 80px;
+    }
+    rect{
+        width: 200%;
+        height: 150%;
+    }
+}

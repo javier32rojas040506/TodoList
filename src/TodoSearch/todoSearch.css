@@ -1,0 +1,19 @@
+.TodoSearch{
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    padding: 8px;
+    font-size: var(--sub-title-size);
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.853);
+    border-radius: 8px;
+    border: 3px solid var(--purple-color);
+    box-shadow: 0px 1px 30px var(--purple-color);
+    background-color: var(--purple-color);
+}
+
+::placeholder{
+    color: var(--gray-premium-color);
+    text-shadow: 0 0 2px var(--gray-premium-color);
+
+}
+

@@ -1,0 +1,8 @@
+.TodoCounter{
+    text-align: center;
+    font-size: var(--title-size);
+    font-family: var(--font);
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: 0 0 2px whitesmoke;
+}

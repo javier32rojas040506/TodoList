@@ -1,0 +1,20 @@
+.CreateButton{
+    border: 1px solid var(--blackblue-color);
+    box-shadow: 0px 1px 20px var(--blue-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: var(--title-size);
+    background-color: var(--purple-color);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(0);
+    transition: 0.4s ease;
+    z-index: 2;
+    text-shadow: 0 0 2px var(--blackblue-color);
+}
+
+.CreateButton:hover {
+    transform: rotate(224deg);
+}
