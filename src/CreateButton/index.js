@@ -1,6 +1,5 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
-import "./createButton.css"
+import "./createButton.css";
 function CreateButton(props){
     const onClickButton =() => {
         props.openModal ? props.setOpenModal(false):props.setOpenModal(true)
