@@ -17,3 +17,7 @@
 
 }
 
+:disabled{
+    opacity: 50%;
+}
+

@@ -1,7 +1,7 @@
 import "./todoSearch.css";
 import React from "react";
 
-function TodoSearch({searchValue, setSearchValue} ){
+function TodoSearch({loading, setSearchValue} ){
     const readSearchInput = function(inputEvent) {
         setSearchValue(inputEvent.target.value);
     }
@@ -11,8 +11,8 @@ function TodoSearch({searchValue, setSearchValue} ){
             className="TodoSearch" 
             placeholder="something"
             onChange={readSearchInput}
+            disabled={loading}
             />
-            <div style={{color:'white'}}>{searchValue}</div>
         </>
     );
 }

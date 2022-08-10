@@ -5,6 +5,7 @@ import TodoSearch from "../TodoSearch/index.js";
 import TodoList from "../TodoList/index.js";
 import TodoItem from "../TodoItem/index.js";
 import CreateButton from "../CreateButton/index.js";
+import TodoSearchEmpty from "../TodoSearchEmpty";
 import { useTodos } from "./useTodos";
 import {Modal} from "../Modal/index.js";
 import {TodoForm} from "../TodoForm/index.js";
@@ -15,7 +16,7 @@ import {TodoHeader} from "../TodoHeader/index.js";
 
 function App() {
   const {
-    error,loading, todos, 
+    error, loading, todos, 
     searchValue, completeTodos, 
     deleteTodos, openModal, 
     setOpenModal, totalTodos, 
@@ -24,21 +25,36 @@ function App() {
 
     return( 
         <React.Fragment>
-            <TodoHeader>
+            <TodoHeader loading={loading}>
                 <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos}/>
                 <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
             </TodoHeader>
-            <TodoList>
-                {error && <TodoError/>}
-                {loading && <TodoLoading/>}
-                { !loading && todos.length <= 0 ? <TodoListEmpty/>: todos.filter(todo => todo.text.toUpperCase().search(searchValue.toUpperCase()) > -1)
-                .map(todo => <TodoItem key={todo.text} 
-                text={todo.text}
-                completed={todo.completed} 
-                completeTodo={() => completeTodos(todo.text)}
-                deleteTodo={() => deleteTodos(todo.text)}
-                />)}
-            </TodoList>
+            <TodoList
+                error={error}
+                loading={loading}
+                todos={todos}
+                searchValue={searchValue}
+                totalTodos={totalTodos}
+                OnError={ () => <TodoError/> }
+                OnLoading={ () => <TodoLoading/>}
+                OnEmptyList={ () => <TodoListEmpty/> }
+                OnEmptySearch={ (TodoSearch) => <TodoSearchEmpty>No Hay resultados para {TodoSearch}</TodoSearchEmpty> }
+                render={ todo => 
+                          (<TodoItem key={todo.text} 
+                                    text={todo.text}
+                                    completed={todo.completed} 
+                                    completeTodo={() => completeTodos(todo.text)}
+                                    deleteTodo={() => deleteTodos(todo.text)}
+                          />)}
+              >
+                 {/* {todo => 
+                          (<TodoItem key={todo.text} 
+                                    text={todo.text}
+                                    completed={todo.completed} 
+                                    completeTodo={() => completeTodos(todo.text)}
+                                    deleteTodo={() => deleteTodos(todo.text)}
+                          />)} */}
+              </TodoList>
             {openModal &&   (<Modal>
                     <TodoForm setOpenModal={setOpenModal} addNewTodo={addNewTodo}/>
                             </Modal>)}

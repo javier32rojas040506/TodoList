@@ -6,3 +6,7 @@
     color: whitesmoke;
     text-shadow: 0 0 2px whitesmoke;
 }
+
+.TodoCounterLoading {
+    opacity: 50%;
+}
