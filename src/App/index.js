@@ -13,6 +13,7 @@ import {TodoLoading} from "../TodoLoading/index.js";
 import {TodoError} from "../TodoError/index.js";
 import {TodoListEmpty} from "../TodoListEmpty/index.js";
 import {TodoHeader} from "../TodoHeader/index.js";
+import {ChangeAlertWithStorageListener} from "../ChangeAlert/index.js";
 
 function App() {
   const {
@@ -21,7 +22,8 @@ function App() {
     deleteTodos, openModal, 
     setOpenModal, totalTodos, 
     setSearchValue, addNewTodo,
-    completedTodos} = useTodos();
+    completedTodos,
+    sincronizeTodos} = useTodos();
 
     return( 
         <React.Fragment>
@@ -58,7 +60,10 @@ function App() {
             {openModal &&   (<Modal>
                     <TodoForm setOpenModal={setOpenModal} addNewTodo={addNewTodo}/>
                             </Modal>)}
-            <CreateButton setOpenModal={setOpenModal} openModal={openModal}/>
+            <CreateButton 
+              setOpenModal={setOpenModal} 
+              openModal={openModal}/>
+            <ChangeAlertWithStorageListener sincronizeTodos={sincronizeTodos}/>
       </React.Fragment>
     );
 }

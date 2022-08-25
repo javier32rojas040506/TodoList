@@ -8,7 +8,7 @@ function TodoList(props) {
                 {props.error && props.OnError()}
                 {props.loading && props.OnLoading()}
                 {(!props.loading && props.todos.length <= 0) && props.OnEmptyList()}
-                {props.todos.filter(todo => todo.text.toUpperCase().search(props.searchValue.toUpperCase()) > -1)
+                { !props.loading && props.todos.filter(todo => todo.text.toUpperCase().search(props.searchValue.toUpperCase()) > -1)
                 .map(renderTodosItems)}
                 {(props.todos.filter(todo => todo.text.toUpperCase()
                 .search(props.searchValue.toUpperCase()) > -1).length<=0 && props.todos.length > 0)
